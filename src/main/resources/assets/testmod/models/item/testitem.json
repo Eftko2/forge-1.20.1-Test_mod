@@ -1,5 +1,5 @@
 {
-  "perent": "item/generated",
+  "parent": "item/generated",
   "textures": {
     "layer0": "testmod:item/testitem"
   }
