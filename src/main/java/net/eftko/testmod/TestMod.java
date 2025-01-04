@@ -1,6 +1,7 @@
 package net.eftko.testmod;
 
 import com.mojang.logging.LogUtils;
+import net.eftko.testmod.item.ModCreativeModeTebs;
 import net.eftko.testmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,6 +30,7 @@ public class TestMod
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModCreativeModeTebs.register(modEventBus);
         ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
@@ -49,9 +51,7 @@ public class TestMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.testitem);
-        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
